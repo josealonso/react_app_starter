@@ -1,32 +1,10 @@
-import './App.css';
-import React from 'react';
-import CssBaseline  from '@material-ui/core/CssBaseline';
-import NavigationBar from './NavigationBar.js';
-import GridLayout from './GridLayout';
-import Container  from '@material-ui/core/Container';
+import "./styles.css";
 
-import Footer from './Footer'
-
-function App() {
+export default function App() {
   return (
     <div className="App">
-
-    <CssBaseline/>
-    <NavigationBar/>
-
-
-<Container>
-
-  <main>
-  <GridLayout/>
-
-  </main>
-
-</Container>
-
-<Footer/>
+      <h1>Hello Solidity developer</h1>
+      <h2>Start your journey to learn React</h2>
     </div>
   );
 }
-
-export default App;
