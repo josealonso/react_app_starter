@@ -15,11 +15,11 @@ export default function App() {
   );
 }
 
-{/* Every component must return JSX elements */ }
-function TopicsList(props) {
+// Every component must return JSX elements 
+function TopicsList({ topics }) {
   return (
     <ul>
-      {props.topics.map(topic => (
+      {topics.map(topic => (
         <li key={topic.id}>{topic.text}</li>
       ))}
     </ul>
