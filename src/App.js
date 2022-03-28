@@ -20,7 +20,7 @@ function TopicsList(props) {
   return (
     <ul>
       {props.topics.map(topic => (
-        <li>{topic.text}</li>
+        <li key={topic.id}>{topic.text}</li>
       ))}
     </ul>
   )
