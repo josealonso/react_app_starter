@@ -30,12 +30,17 @@ function TopicsList({ topics }) {
 function AddTopic() {
   function handleAddTopic(event) {
     event.preventDefault(); // This prevents a page refresh
-
+    const text = event.target.elements.addTopic.value;
+    const topic = {
+      id: 3,
+      text,
+      done: false
+    };
   }
 
   return (
     <form onSubmit={handleAddTopic}>
-      <input placeholder="Add topic" />
+      <input name="addTopic" placeholder="Add topic" />
       <button type="submit">Submit</button>
     </form>
   )
