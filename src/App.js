@@ -1,17 +1,19 @@
+import React from "react";
 import "./styles.css";
 
+// Any re-render within a parent component will cause any child components to re-render.
 export default function App() {
-  const topics = [
+  const [topics, setTopics] = React.useState([
     { id: 1, text: "React components", done: false },
     { id: 2, text: "Rendering", done: false }
-  ];
+  ])
 
   return (
     <div className="App">
       <h1>React Tutorial for Solidity developers</h1>
       <h2>Topics covered</h2> {/* component with single tag */}
       <TopicsList topics={topics} />
-      <AddTopic />
+      <AddTopic setTopics={setTopics} />
     </div>
   );
 }
@@ -27,7 +29,7 @@ function TopicsList({ topics }) {
   )
 }
 
-function AddTopic() {
+function AddTopic({ setTopics }) {
   function handleAddTopic(event) {
     event.preventDefault(); // This prevents a page refresh
     const text = event.target.elements.addTopic.value;
@@ -36,6 +38,9 @@ function AddTopic() {
       text,
       done: false
     };
+    setTopics(prevTopics => {
+      return prevTopics.concat(topic);
+    });
   }
 
   return (
